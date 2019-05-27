@@ -131,38 +131,111 @@ namespace gestureapi{
         }
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for gesture
+     * @return true if no gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of any form of gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::noGesture(int in){
         return in == 0;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a left swipe
+     * @return true if a left swipe gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of a left swipe gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isLeft(int in){
         return in & 0x8;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a right swipe
+     * @return true if a right swipe gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of a right swipe gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isRight(int in){
         return in & 0x4;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for an up swipe
+     * @return true if an up swipe gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of an up swipe gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isUp(int in){
         return in & 0x20;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a down swipe
+     * @return true if a down swipe gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of a down swipe gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isDown(int in){
         return in & 0x10;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a push
+     * @return true if a forward motion gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of a forward motion gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isForward(int in){
         return in & 0x2;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a pull swipe
+     * @return true if a backward motion gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of a backward motion gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isBackward(int in){
         return in & 0x1;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a clockwise twist
+     * @return true if a clockwise twisting gesture was detected or false otherwise
+     * 
+     * This function detectes the presence or absence of a clockwise twisting gesture
+     * from an integer value returned by the input() method.
+     */
     bool GestureInput::isClockwise(int in){
         return in & 0x40;
     }
 
+    /**
+     * @param in value from previous call to input()
+     * @brief Checks value returned by input() for a counterclockwise twist
+     * @return true if a counterclockwise twisting gesture was detected or
+     * false otherwise
+     * 
+     * This function detectes the presence or absence of a counterclockwise
+     * twisting gesture from an integer value returned by the input() method.
+     */
     bool GestureInput::isCounterClockwise(int in){
         return in & 0x80;
     }
